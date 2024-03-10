@@ -1,0 +1,16 @@
+.daterangeselect__wrapper {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.daterangeselect__datepickers {
+  display: flex;
+  gap: 20px;
+}
+
+.daterangeselect__wrapper .button__wrapper {
+  align-self: stretch;
+}
