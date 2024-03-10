@@ -1,9 +1,13 @@
 import React from "react";
 import "./CommitsTable.css";
-import { getFormattedDate } from "../../shared/utils";
+import {
+  getFormattedDate,
+} from "../../shared/utils";
+import { useNavigate } from "react-router-dom";
 
 const CommitsTable = ({ list = [] }) => {
   console.log("Commits table - ", list);
+  const navigate = useNavigate();
   const renderCommitRow = (item, index) => {
     const {
       sha,
@@ -11,8 +15,12 @@ const CommitsTable = ({ list = [] }) => {
       author: authordetails,
     } = item;
     return (
-      <div className="commitstable__commit" key={sha}>
-        <h3>{message}</h3>
+      <div
+        className="commitstable__commit"
+        key={sha}
+        onClick={() => navigate(`/details/${sha}`)}
+      >
+        <h3 className="commitstable__commit-message">{message}</h3>
         <div className="commitstable__commit-timestamp">
           {getFormattedDate(author.date)}
         </div>

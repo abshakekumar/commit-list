@@ -1,6 +1,11 @@
 :root {
+  --primary-bg: rgba(123, 45, 67, 1);
+  --primary-text-color: black;
+  --secondary-bg: rgba(45, 45, 78, 1);
+  --secondary-text-color: red;
   --border-color: rgba(0, 255, 0, 1);
   --avatar-border-color: var(--border-color);
+  --card-hover-bg: lightcoral;
   --font-color-light: lightorange;
   --font-color-default: lightgray;
   --font-size-sm: 12px;
@@ -17,9 +22,15 @@
   --padding-lg: 30px;
   --padding-xlg: 40px;
   --avatar-height: 50px;
+  --avatar-height-details-page: 150px;
   --gap-sm: 4px;
   --gap-default: 8px;
   --gap-lg: 12px;
   --gap-xxlg: 20px;
   --gap-xxxlg: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  word-break: break-all;
 }

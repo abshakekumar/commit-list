@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { URLS } from "../shared/constants";
+import { CacheManager } from "../shared/cacheStore";
 
 const getCommitListApiUrl = ({
   startDate,
@@ -35,6 +36,11 @@ const useCommitListData = (state) => {
         }
         const apiresponseData = await apiResp.json();
         console.log("API DATA -", apiresponseData);
+        const normalisedCommitsData = CacheManager.makeNormalisedData(
+          apiresponseData,
+          "sha"
+        );
+        CacheManager.updateCache("commits_list", { ...normalisedCommitsData });
         setApiData({ loading: false, error: false, data: apiresponseData });
       } catch (err) {
         setApiData((prev) => ({ ...prev, loading: false, error: true }));

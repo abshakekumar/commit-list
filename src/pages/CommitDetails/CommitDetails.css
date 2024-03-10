@@ -1,0 +1,31 @@
+.commitdetails__commit {
+  padding: var(--padding-sm);
+  margin: var(--padding-sm) 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  gap: var(--gap-xxxlg);
+  display: flex;
+  justify-content: center;
+}
+
+.commitdetails__commit-avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.commitdetails__commit img {
+  max-height: 100%;
+  max-width: 100%;
+  height: var(--avatar-height-details-page);
+  width: var(--avatar-height-details-page);
+  border-radius: 50%;
+  border: 1px solid var(--avatar-border-color);
+  margin-bottom: 30px;
+}
+
+.commitdetails__commit aside {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: var(--gap-default);
+}

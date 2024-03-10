@@ -1,0 +1,15 @@
+.linkcomponent__wrapper {
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--primary-bg);
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg);
+}
+
+.linkcomponent__wrapper:hover,
+.linkcomponent__wrapper:focus {
+  opacity: 0.7;
+  background-color: var(--secondary-bg);
+  color: var(--secondary-text-color);
+}

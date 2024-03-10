@@ -9,6 +9,16 @@
   border-radius: var(--card-border-radius);
 }
 
+.commitstable__commit:hover {
+  opacity: 0.8;
+  background-color: var(--card-hover-bg);
+  cursor: pointer;
+}
+
+.commitstable__commit-message {
+  word-wrap: break-word;
+}
+
 .commitstable__commit-timestamp {
   padding: var(--padding-sm) 0;
   font-size: var(--font-size-sm);

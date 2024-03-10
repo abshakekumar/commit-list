@@ -10,6 +10,13 @@ export const ACTIONS = {
   SET__PER_PAGE: "set__perpage",
 };
 
+export const ITEMS_PER_PAGE = [
+  { value: "5", label: "5 items" },
+  { value: "10", label: "10 items" },
+  { value: "15", label: "15 items" },
+  { value: "20", label: "20 items" },
+];
+
 export const URLS = {
   COMMIT_LIST: "https://api.github.com/repos/rolldown-rs/rolldown/commits",
 };

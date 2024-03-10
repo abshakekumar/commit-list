@@ -1,6 +1,6 @@
 import React, { useReducer, createContext, useContext } from "react";
 import { getCurrDate, getDateOnlyISOformat, getLastMonthDate } from "./utils";
-import { ACTIONS } from "./constants";
+import { ACTIONS, ITEMS_PER_PAGE } from "./constants";
 
 const CommitsContext = createContext();
 
@@ -8,7 +8,7 @@ const initialState = {
   startDate: getDateOnlyISOformat(getLastMonthDate()),
   endDate: getDateOnlyISOformat(getCurrDate()),
   pageNo: 1,
-  perPageItemCount: 10,
+  perPageItemCount: ITEMS_PER_PAGE[0].value,
 };
 
 const commitsReducer = (state, action) => {

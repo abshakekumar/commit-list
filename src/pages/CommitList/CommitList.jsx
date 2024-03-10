@@ -1,18 +1,18 @@
 import React from "react";
 import DateRangeSelection from "../../components/DateRangeSelector/DateRangeSelector";
 import { useCommitsState } from "../../shared/store";
-import { ACTIONS } from "../../shared/constants";
+import { ACTIONS, ITEMS_PER_PAGE } from "../../shared/constants";
 import useCommitListData from "../../hooks/useCommitListData";
 import Loading from "../../components/Loading/Loading";
 import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
 import NoDataAvailable from "../../components/NoDataAvailable/NoDataAvailable";
 import CommitsTable from "../../components/CommitsTable/CommitsTable";
 import "./CommitList.css";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 const CommitList = () => {
   const { state, dispatch } = useCommitsState();
   const { loading, error, data } = useCommitListData(state);
-  console.log({ state, data });
   return (
     <section className="commitlist__wrapper">
       <DateRangeSelection
@@ -23,7 +23,13 @@ const CommitList = () => {
           dispatch({ type: ACTIONS.SET__START_DATE, payload: data.startDate });
         }}
       />
-      {state.endDate} - {state.startDate}
+      <Dropdown
+        options={ITEMS_PER_PAGE}
+        selectedVal={state.perPageItemCount}
+        handleOptionChange={(value) => {
+          dispatch({ type: ACTIONS.SET__PER_PAGE, payload: value });
+        }}
+      />
       <section className="commitlist__tablewrapper">
         {loading ? (
           <Loading>Please wait...</Loading>
