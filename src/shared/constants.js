@@ -9,3 +9,7 @@ export const ACTIONS = {
   SET__PAGE_NO: "set__pageno",
   SET__PER_PAGE: "set__perpage",
 };
+
+export const URLS = {
+  COMMIT_LIST: "https://api.github.com/repos/rolldown-rs/rolldown/commits",
+};

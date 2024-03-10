@@ -21,3 +21,6 @@ export const getDateOnlyISOformat = (date) => {
   const isoDate = getISOformatDate(date);
   return isoDate.split("T")[0];
 };
+
+export const getFormattedDate = (date) => new Date(date).toString();
+

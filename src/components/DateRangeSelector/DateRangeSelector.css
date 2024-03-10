@@ -1,14 +1,14 @@
 .daterangeselect__wrapper {
-  padding: 10px;
+  padding: var(--padding-sm);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 40px;
+  gap: var(--gap-xxxlg);
 }
 
 .daterangeselect__datepickers {
   display: flex;
-  gap: 20px;
+  gap: var(--gap-xxlg);
 }
 
 .daterangeselect__wrapper .button__wrapper {

@@ -1,0 +1,11 @@
+.commitlist__wrapper {
+  padding: var(--padding-normal);
+}
+
+.commitlist__tablewrapper {
+  border: 1px solid var(--border-color);
+  border-radius: var(--table-border-radius);
+  padding: var(--padding-normal);
+  max-height: var(--table-max-height);
+  overflow: auto;
+}

@@ -1,0 +1,32 @@
+.commitstable__wrapper {
+  padding: var(--padding-normal) 0;
+}
+
+.commitstable__commit {
+  padding: var(--padding-sm);
+  margin: var(--padding-sm) 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-border-radius);
+}
+
+.commitstable__commit-timestamp {
+  padding: var(--padding-sm) 0;
+  font-size: var(--font-size-sm);
+}
+
+.commitstable__commit-author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  font-size: var(--font-size-sm);
+  color: var(--font-color-light);
+}
+
+.commitstable__commit-author--avatar img {
+  max-height: 100%;
+  max-width: 100%;
+  height: var(--avatar-height);
+  width: var(--avatar-height);
+  border-radius: 50%;
+  border: 1px solid var(--avatar-border-color);
+}

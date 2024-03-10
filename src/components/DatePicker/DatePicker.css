@@ -1,6 +1,6 @@
 .datepicker__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 5px 0;
+  gap: var(--gap-sm);
+  padding: var(--padding-xsm) 0;
 }
