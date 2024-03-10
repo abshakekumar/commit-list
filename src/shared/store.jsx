@@ -9,18 +9,21 @@ const initialState = {
   endDate: getDateOnlyISOformat(getCurrDate()),
   pageNo: 1,
   perPageItemCount: ITEMS_PER_PAGE[0].value,
+  loadingMain: false,
 };
 
 const commitsReducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.SET__START_DATE:
-      return { ...state, startDate: action.payload };
+      return { ...state, startDate: action.payload, loadingMain: true };
     case ACTIONS.SET__END_DATE:
-      return { ...state, endDate: action.payload };
+      return { ...state, endDate: action.payload, loadingMain: true };
     case ACTIONS.SET__PAGE_NO:
       return { ...state, pageNo: action.payload };
     case ACTIONS.SET__PER_PAGE:
-      return { ...state, perPageItemCount: action.payload };
+      return { ...state, perPageItemCount: action.payload, loadingMain: true };
+      case ACTIONS.SET__MAIN_LOADING:
+      return { ...state, loadingMain: action.payload };
     default:
       throw new Error("Unsupported action type");
   }

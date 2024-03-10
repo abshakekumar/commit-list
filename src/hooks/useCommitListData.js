@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { URLS } from "../shared/constants";
+import { ACTIONS, URLS } from "../shared/constants";
 import { CacheManager } from "../shared/cacheStore";
 
 const getCommitListApiUrl = ({
@@ -11,7 +11,7 @@ const getCommitListApiUrl = ({
   return `${URLS.COMMIT_LIST}?since=${startDate}&until=${endDate}&page=${pageNo}&per_page=${perPageItemCount}`;
 };
 
-const useCommitListData = (state) => {
+const useCommitListData = (state, dispatch) => {
   const [apiData, setApiData] = useState({
     loading: false,
     error: false,
@@ -41,9 +41,12 @@ const useCommitListData = (state) => {
           "sha"
         );
         CacheManager.updateCache("commits_list", { ...normalisedCommitsData });
+        CacheManager.updateCache("commits_list_previous", apiresponseData);
         setApiData({ loading: false, error: false, data: apiresponseData });
       } catch (err) {
         setApiData((prev) => ({ ...prev, loading: false, error: true }));
+      } finally {
+        dispatch({ type: ACTIONS.SET__MAIN_LOADING, payload: false });
       }
     };
 

@@ -9,7 +9,6 @@ import "./CommitDetails.css";
 const CommitDetails = () => {
   const { id } = useParams();
   const commitData = CacheManager.getCacheDataById("commits_list", id);
-  console.log("commitData", commitData);
   const renderCommitDetails = (commitData) => {
     const { author, commit, comments_url, html_url, sha, url } =
       commitData || {};
@@ -27,7 +26,7 @@ const CommitDetails = () => {
         </div>
         <aside>
           <div>Message </div>
-          <div>{message}</div>
+          <pre className="commitdetails__commit-message">{message}</pre>
           <div>Timestamp</div>
           <div>{getFormattedDate(commitAuthor.date)}</div>
           <div>SHA</div>

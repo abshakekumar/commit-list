@@ -8,6 +8,7 @@ export const ACTIONS = {
   SET__END_DATE: "set__end_date",
   SET__PAGE_NO: "set__pageno",
   SET__PER_PAGE: "set__perpage",
+  SET__MAIN_LOADING: "set__mainloading",
 };
 
 export const ITEMS_PER_PAGE = [

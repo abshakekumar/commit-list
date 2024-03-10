@@ -1,6 +1,10 @@
 const CacheData = () => {
   let cacheStore = {};
 
+  const getCacheItem = (cacheKey) => {
+    return cacheStore[cacheKey];
+  };
+
   const getCacheDataById = (cacheKey, id) => {
     if (cacheStore[cacheKey]) {
       if (id) {
@@ -25,9 +29,17 @@ const CacheData = () => {
 
   const updateCache = (key, value) => {
     if (!cacheStore[key]) {
-      cacheStore[key] = {};
+      cacheStore[key] = Array.isArray(value) ? [] : {};
+    }
+    if (Array.isArray(value)) {
+      cacheStore[key] = [...cacheStore[key], ...value];
+      return;
     }
     cacheStore[key] = { ...cacheStore[key], ...value };
+  };
+
+  const resetCacheKey = (cacheKey) => {
+    delete cacheStore[cacheKey];
   };
 
   return {
@@ -35,6 +47,8 @@ const CacheData = () => {
     getCacheDataById,
     makeNormalisedData,
     updateCache,
+    getCacheItem,
+    resetCacheKey,
   };
 };
 

@@ -12,7 +12,6 @@ export const getLastMonthDate = () => {
     currentYear -= 1; // Move back one year
   }
   const oneMonthAgoDate = new Date(currentYear, currentMonth, currentDay);
-  console.log(oneMonthAgoDate);
   return oneMonthAgoDate;
 };
 
@@ -23,4 +22,6 @@ export const getDateOnlyISOformat = (date) => {
 };
 
 export const getFormattedDate = (date) => new Date(date).toString();
+
+export const splitStrIntoArr = (str, splitOn) => (str.split(splitOn));
 
